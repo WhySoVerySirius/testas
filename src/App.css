@@ -1,38 +1,93 @@
-.App {
-  text-align: center;
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.banner-img {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header {
+    position: fixed;
+    inset: 0 auto auto auto;
+    width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+ul {
+    background-color: yellow;
+    margin: 0;
+    padding: 1rem 0;
 }
 
-.App-link {
-  color: #61dafb;
+ul>* {
+    text-decoration: none;
+    color: violet;
+    margin-inline: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.home-center-link {
+    color: violet;
+    font-size: 5em;
+}
+
+.layout-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-image {
+    height: 50px;
+    width: 50px;
+}
+
+.table-container {
+    margin-top: 6rem;
+    height: 100%;
+    overflow: scroll;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation>* {
+    margin-inline: 5px;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: green;
+    font-weight: bold;
+}
+
+.page-display {
+    font-size: 2rem;
+    padding: 1rem;
+    border: green solid 1px;
+    border-radius: 100%;
+    background-color: green;
+    color: white;
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
 }
