@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import NavButton from "./NavButton";
 import CustomizedTables from "./Table";
 import MultipleSelectCheckmarks from "./TableSelector";
 
@@ -43,11 +44,11 @@ export default function ListPage()
                     <CustomizedTables data={characters.results} columns={columns}/>
                 </div>
                 <div className="navigation">
-                    <div className="" onClick={()=>setPage(1)}>&lt;&lt;</div>
-                    {page > 1?<div className="" onClick={()=>setPage(page-1)}>&lt;</div>:<div className="">&lt;</div>}
+                    <NavButton target={'first'} currentPage={page} maxPage={characters.info.pages} action={setPage}/>
+                    <NavButton target={'back'} currentPage={page} maxPage={characters.info.pages} action={setPage}/>
                     <div className="page-display">{page}</div>
-                    {page < characters.info.pages?<div className="" onClick={()=>setPage(page+1)}>&gt;</div>:<div className="">&gt;</div>}
-                    <div className="" onClick={()=>setPage(characters.info.pages)}>&gt;&gt;</div>
+                    <NavButton target={'forward'} currentPage={page} maxPage={characters.info.pages} action={setPage}/>
+                    <NavButton target={'last'} currentPage={page} maxPage={characters.info.pages} action={setPage}/>
                 </div>
             </div>
         )
