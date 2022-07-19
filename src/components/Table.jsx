@@ -41,8 +41,8 @@ export default function CustomizedTables({data, columns}) {
     })
 
     return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 700 }} aria-label="customized table">
+    <TableContainer component={Paper} style={{overflowX:"initial"}}>
+      <Table sx={{ minWidth: 700 }} aria-label="customized table" stickyHeader>
         <TableHead>
           <TableRow>
             {columns.includes('id')? <StyledTableCell align="right">Id</StyledTableCell>: null}

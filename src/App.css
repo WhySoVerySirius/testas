@@ -100,3 +100,10 @@ ul>* {
     display: flex;
     justify-content: flex-end;
 }
+
+.table-header {
+    position: sticky !important;
+    inset: 0 auto auto auto;
+}
+
+.table-body {}
