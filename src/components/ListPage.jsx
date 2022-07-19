@@ -33,6 +33,23 @@ export default function ListPage()
         [page]
     )
 
+    const manualChange = (value) => {
+        if(value)
+        {
+            if(value<=0 || value==='')
+            {
+                setPage(1);
+                return;
+            }
+            if(value>characters.info.pages)
+            {
+                setPage(characters.info.pages);
+                return;
+            }
+            setPage(value);
+        }
+    }
+
     if(!error && loaded && characters) {
 
         return (
@@ -46,7 +63,7 @@ export default function ListPage()
                 <div className="navigation">
                     <NavButton target={'first'} currentPage={page} maxPage={characters.info.pages} action={setPage}/>
                     <NavButton target={'back'} currentPage={page} maxPage={characters.info.pages} action={setPage}/>
-                    <div className="page-display">{page}</div>
+                    <input type="text" className="page-display" value={page} disabled/>
                     <NavButton target={'forward'} currentPage={page} maxPage={characters.info.pages} action={setPage}/>
                     <NavButton target={'last'} currentPage={page} maxPage={characters.info.pages} action={setPage}/>
                 </div>
