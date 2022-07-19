@@ -33,23 +33,6 @@ export default function ListPage()
         [page]
     )
 
-    const manualChange = (value) => {
-        if(value)
-        {
-            if(value<=0 || value==='')
-            {
-                setPage(1);
-                return;
-            }
-            if(value>characters.info.pages)
-            {
-                setPage(characters.info.pages);
-                return;
-            }
-            setPage(value);
-        }
-    }
-
     if(!error && loaded && characters) {
 
         return (
