@@ -35,11 +35,13 @@ export default function ListPage()
     if(!error && loaded && characters) {
 
         return (
-            <div className="table-container">
-                <div className="nav">
-                <MultipleSelectCheckmarks defaultCol={columns} columnChange={setColumns}/>
+            <div className="table-nav-outter-container">
+                    <div className="nav">
+                    <MultipleSelectCheckmarks defaultCol={columns} columnChange={setColumns}/>
+                    </div>
+                <div className="table-container">
+                    <CustomizedTables data={characters.results} columns={columns}/>
                 </div>
-                <CustomizedTables data={characters.results} columns={columns}/>
                 <div className="navigation">
                     <div className="" onClick={()=>setPage(1)}>&lt;&lt;</div>
                     {page > 1?<div className="" onClick={()=>setPage(page-1)}>&lt;</div>:<div className="">&lt;</div>}

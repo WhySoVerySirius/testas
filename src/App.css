@@ -55,9 +55,15 @@ ul>* {
 }
 
 .table-container {
+    height: 80%;
+    overflow-y: scroll;
+}
+
+.table-nav-outter-container {
+    display: flex;
+    flex-direction: column;
     margin-top: 6rem;
     height: 100%;
-    overflow: scroll;
 }
 
 .navigation {
