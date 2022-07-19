@@ -19,7 +19,6 @@ export default function ListPage()
         'location',
         'image'
     ]);
-    const [filteredData, setFilteredData] = useState(null);
 
     useEffect(
         ()=>{
@@ -32,27 +31,6 @@ export default function ListPage()
         },
         [page]
     )
-
-    useEffect(()=>{
-        let array = [];
-        if(characters && columns) {
-            characters.results.map(character=>{
-                let obj = {};
-                columns.map(prop=>{
-                    if (prop==='origin' || prop==='location')
-                    {
-                        obj.prop = character.prop.name
-                    };
-                    obj.prop = character.prop;
-                })
-                array.push(obj)
-            })
-        };
-        console.log(array)
-    },
-    [characters, columns]
-    )
-
 
     if(!error && loaded && characters) {
 

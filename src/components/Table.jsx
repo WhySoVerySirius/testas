@@ -46,29 +46,29 @@ export default function CustomizedTables({data, columns}) {
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell align="right">Id</StyledTableCell>
-            <StyledTableCell align="right">Name</StyledTableCell>
-            <StyledTableCell align="right">Status</StyledTableCell>
-            <StyledTableCell align="right">Species</StyledTableCell>
-            <StyledTableCell align="right">Type</StyledTableCell>
-            <StyledTableCell align="right">Gender</StyledTableCell>
-            <StyledTableCell align="right">Origin</StyledTableCell>
-            <StyledTableCell align="right">Location</StyledTableCell>
-            <StyledTableCell align="right">Image</StyledTableCell>
+            {columns.includes('id')? <StyledTableCell align="right">Id</StyledTableCell>: null}
+            {columns.includes('name')?<StyledTableCell align="right">Name</StyledTableCell>:null}
+            {columns.includes('status')?<StyledTableCell align="right">Status</StyledTableCell>:null}
+            {columns.includes('species')?<StyledTableCell align="right">Species</StyledTableCell>:null}
+            {columns.includes('type')?<StyledTableCell align="right">Type</StyledTableCell>:null}
+            {columns.includes('gender')?<StyledTableCell align="right">Gender</StyledTableCell>:null}
+            {columns.includes('origin')?<StyledTableCell align="right">Origin</StyledTableCell>:null}
+            {columns.includes('location')?<StyledTableCell align="right">Location</StyledTableCell>:null}
+            {columns.includes('image')?<StyledTableCell align="right">Image</StyledTableCell>:null}
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
             <StyledTableRow key={row.name}>
-              <StyledTableCell component="th" scope="row">{row.id}</StyledTableCell>
-              <StyledTableCell align="right">{row.name}</StyledTableCell>
-              <StyledTableCell align="right">{row.status}</StyledTableCell>
-              <StyledTableCell align="right">{row.species}</StyledTableCell>
-              <StyledTableCell align="right">{row.type}</StyledTableCell>
-              <StyledTableCell align="right">{row.gender}</StyledTableCell>
-              <StyledTableCell align="right">{row.origin}</StyledTableCell>
-              <StyledTableCell align="right">{row.location}</StyledTableCell>
-              <StyledTableCell align="right"><img src={row.image} alt="" className='list-image'/> </StyledTableCell>
+              {columns.includes('id')?<StyledTableCell component="th" scope="row">{row.id}</StyledTableCell>:null}
+              {columns.includes('name')?<StyledTableCell align="right">{row.name}</StyledTableCell>:null}
+              {columns.includes('status')?<StyledTableCell align="right">{row.status}</StyledTableCell>:null}
+              {columns.includes('species')?<StyledTableCell align="right">{row.species}</StyledTableCell>:null}
+              {columns.includes('type')?<StyledTableCell align="right">{row.type}</StyledTableCell>:null}
+              {columns.includes('gender')?<StyledTableCell align="right">{row.gender}</StyledTableCell>:null}
+              {columns.includes('origin')?<StyledTableCell align="right">{row.origin}</StyledTableCell>:null}
+              {columns.includes('location')?<StyledTableCell align="right">{row.location}</StyledTableCell>:null}
+              {columns.includes('image')?<StyledTableCell align="right"><img src={row.image} alt="" className='list-image'/> </StyledTableCell>:null}
             </StyledTableRow>
           ))}
         </TableBody>
