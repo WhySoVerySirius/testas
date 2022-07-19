@@ -7,7 +7,7 @@ export default function Layout({children, links})
         <div className="container">
             <header>
                 <ul>
-                {links.map(link=><Link to={link.path}>{link.naming}</Link>)}
+                {links.map(link=><Link to={link.path} key={link.path}>{link.naming}</Link>)}
                 </ul>
             </header>
             <div className="layout-container">

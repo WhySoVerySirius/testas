@@ -59,7 +59,7 @@ export default function CustomizedTables({data, columns}) {
         </TableHead>
         <TableBody>
           {rows.map((row) => (
-            <StyledTableRow key={row.name}>
+            <StyledTableRow key={row.id}>
               {columns.includes('id')?<StyledTableCell component="th" scope="row">{row.id}</StyledTableCell>:null}
               {columns.includes('name')?<StyledTableCell align="right">{row.name}</StyledTableCell>:null}
               {columns.includes('status')?<StyledTableCell align="right">{row.status}</StyledTableCell>:null}
