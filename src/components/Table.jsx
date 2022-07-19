@@ -35,7 +35,6 @@ export default function CustomizedTables({data, columns}) {
     function createData(id, name, status, species, type, gender, origin, location, image) {
         return {id, name, status, species, type, gender, origin, location, image};
     }
-    console.log(columns)
 
     data.map(item=>{
         rows.push(createData(item.id, item.name, item.status, item.species, item.type, item.gender, item.origin.name, item.location.name, item.image))

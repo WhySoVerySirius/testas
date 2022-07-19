@@ -42,9 +42,9 @@ export default function ListPage()
                 <CustomizedTables data={characters.results} columns={columns}/>
                 <div className="navigation">
                     <div className="" onClick={()=>setPage(1)}>&lt;&lt;</div>
-                    <div className="" onClick={()=>setPage(page-1)}>&lt;</div>
+                    {page > 1?<div className="" onClick={()=>setPage(page-1)}>&lt;</div>:<div className="">&lt;</div>}
                     <div className="page-display">{page}</div>
-                    <div className="" onClick={()=>setPage(page+1)}>&gt;</div>
+                    {page < characters.info.pages?<div className="" onClick={()=>setPage(page+1)}>&gt;</div>:<div className="">&gt;</div>}
                     <div className="" onClick={()=>setPage(characters.info.pages)}>&gt;&gt;</div>
                 </div>
             </div>
